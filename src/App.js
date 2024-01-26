@@ -5,6 +5,7 @@ import Skills from "./components/skills";
 import Work from './components/work';
 import Contact from './components/contact'
 import Carousel from "./components/Carousel";
+import Carousel from "./components/Carousel";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
       <Skills />
       <Work />
       <Carousel/>
+      <Carousel/>
       <Contact />
+      
       
     </div>
   );
