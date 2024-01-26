@@ -22,7 +22,7 @@ import slide_image_7 from "../../src/img/destruction.jpg";
 
 
 function Carousel() {
-    return <div className='w-full flex flex-col h-screen bg-[#0a192f] justify-center items-center'>
+    return <div name='gallery' className='w-full flex flex-col h-screen bg-[#0a192f] justify-center items-center'>
 
         <div className='p-20 justify-center flex'>
 
