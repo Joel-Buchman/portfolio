@@ -1,13 +1,12 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import ReactDOM from 'react-dom';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { EffectCoverFlow, pagination, navigation } from 'swiper/react';
 
 import slide_image_1 from "../../src/img/captainA.jpg";
 import slide_image_2 from "../../src/img/batman.jpg";
@@ -21,10 +20,11 @@ import slide_image_7 from "../../src/img/destruction.jpg";
 
 
 
-function Carousel() {
-    return <div className='w-full flex-col h-screen bg-[#0a192f] justify-center items-center p-14'>
 
-        <div className='p-20 justify-center'>
+function Carousel() {
+    return <div className='w-full flex flex-col h-screen bg-[#0a192f] justify-center items-center'>
+
+        <div className='p-20 justify-center flex'>
 
             <h1 className="heading text-4xl text-center text-white">My Gallery</h1>
         </div>
@@ -32,16 +32,15 @@ function Carousel() {
             effect={'coverflow'}
             grabCursor={true}
             centeredSlides={true}
-            loop={true}
             slidesPerView={'3'}
-            lazyLoading={'true'}
+            loop={true}
             coverflowEffect={
                 {
-                    rotate: 50,
-                    stretch: 0,
+                    rotate: 10,
+                    stretch: 10,
                     depth: 300,
-                    modifier: 1,
-                    slideShadows: true,
+                    modifier: 2,
+                    slideShadows: false,
                 }}
                
             pagination={{ el: 'swiper-pagination', clickable: true }}
@@ -50,7 +49,9 @@ function Carousel() {
                 prevEl: 'swiper-button-prev',
                 clickable: true,
             }}
-            className='swiper_container w-[1200px] h-full'
+            modules={[EffectCoverflow, Pagination, Navigation]}
+
+            className='swiper_container flex max-w-[1400px] h-full '
         >
             <SwiperSlide>
                 <img src={slide_image_1} alt='slide_image' />
